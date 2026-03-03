@@ -1,24 +1,8 @@
-import type { TSeoLocaleParams } from '_core/types/locale';
-import Counter from '@/components/Counter';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
+import JobBoardSection from '@/components/job-board/JobBoardSection';
+import { mockJobPosts } from '@/mocks';
 
-type TProps = {
-    params: Promise<{
-        seoLocale: string;
-    }>;
-};
-
-const HomePage = async (props: TProps) => {
-    const params = (await props.params) as TSeoLocaleParams;
-
-    const { seoLocale } = params;
-
-    return (
-        <>
-            <LanguageSwitcher seoLocale={seoLocale} />
-            <Counter seoLocale={seoLocale} />
-        </>
-    );
+const HomePage = () => {
+    return <JobBoardSection jobs={mockJobPosts} />;
 };
 
 export default HomePage;
