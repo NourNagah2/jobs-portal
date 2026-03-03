@@ -1,2 +1,0 @@
-export const HIERARCHY_HORIZONTAL_GAP = 290;
-export const HIERARCHY_VERTICAL_GAP = 200;
