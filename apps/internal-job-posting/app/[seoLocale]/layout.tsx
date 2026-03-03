@@ -5,7 +5,7 @@ import type React from 'react';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Main from '@/components/Main';
-import '@/styles/global.scss';
+import '_core/styles/global.scss';
 
 type TProps = {
     params: Promise<{ seoLocale: string }>;
