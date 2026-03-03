@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "blanu.vscode-styled-jsx",
+        "dzannotti.vscode-babel-coloring",
+        "stylelint.vscode-stylelint",
+        "yoavbls.pretty-ts-errors",
+        "biomejs.biome-vscode"
+    ],
+    "unwantedRecommendations": [
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-typescript-tslint-plugin",
+        "styled-components.vscode-styled-components",
+        "dbaeumer.vscode-eslint"
+    ]
+}

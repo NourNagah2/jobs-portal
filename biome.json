@@ -1,0 +1,64 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.3.3/schema.json",
+    "files": {
+        "includes": [
+            "**",
+            "!!**/.next",
+            "!!**/.turbo",
+            "**/*",
+            "!**/.next",
+            "!**/.next-internal",
+            "!**/.turbo",
+            "!**/node_modules",
+            "!**/dist",
+            "!**/build"
+        ],
+        "maxSize": 5242880
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "a11y": {
+                "noSvgWithoutTitle": "off",
+                "useSemanticElements": "off",
+                "useButtonType": "off",
+                "noStaticElementInteractions": "off",
+                "useAriaPropsSupportedByRole": "off",
+                "noLabelWithoutControl": "off"
+            },
+            "suspicious": {
+                "useIterableCallbackReturn": "off"
+            }
+        },
+        "includes": ["**/*.{js,jsx,ts,tsx,json,css,scss}"]
+    },
+    "formatter": {
+        "enabled": true,
+        "lineWidth": 120,
+        "indentWidth": 4,
+        "indentStyle": "space",
+        "includes": ["**/*.{js,jsx,ts,tsx,json,css,scss}"]
+    },
+    "assist": { "actions": { "source": { "organizeImports": "on" } } },
+    "css": {
+        "formatter": {
+            "enabled": true
+        },
+        "parser": {
+            "cssModules": true
+        },
+        "assist": {
+            "enabled": true
+        }
+    },
+    "javascript": {
+        "formatter": {
+            "enabled": true,
+            "quoteStyle": "single"
+        },
+        "assist": {
+            "enabled": true
+        }
+    }
+}

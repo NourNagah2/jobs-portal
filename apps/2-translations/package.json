@@ -1,0 +1,11 @@
+{
+    "name": "@web-boilerplate/2-translations",
+    "private": true,
+    "version": "4.0.0",
+    "scripts": {
+        "dev": "   PORT=443 _APP=2-translations next dev  --experimental-https",
+        "lint": "                               next lint --no-cache",
+        "build": " _APP=2-translations          next build",
+        "start": "                              next start"
+    }
+}
