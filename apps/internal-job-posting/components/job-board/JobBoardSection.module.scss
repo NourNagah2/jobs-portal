@@ -1,16 +1,16 @@
 @use '_core/styles/mixins' as *;
 
 .container {
-    width: min(1260px, 100%);
+    width: min(1100px, 100%);
     margin: 0 auto;
-    padding: var(--space-5) var(--space-4) var(--space-8);
+    padding: var(--space-4) var(--space-3) var(--space-6);
 }
 
 .topRow {
     @include flex-between;
 
     gap: var(--space-4);
-    margin-bottom: var(--space-4);
+    margin-bottom: 14px;
 }
 
 .stats {
@@ -21,7 +21,7 @@
 }
 
 .title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: var(--font-weight-semibold);
     color: #2a303d;
 }
@@ -40,7 +40,7 @@
 
 .countLabel {
     color: #7f8796;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .divider {
@@ -50,13 +50,13 @@
 }
 
 .search {
-    width: min(560px, 100%);
+    width: min(500px, 100%);
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-4);
+    gap: 12px;
 }
 
 @include screen-max-tablet {
