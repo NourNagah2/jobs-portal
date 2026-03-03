@@ -1,5 +1,5 @@
-import { useTranslationServer } from '_core/i18n/i18nServer';
 import type { TLocaleSEO } from '_core/types/locale';
+import { useTranslationServer } from '@/lib';
 
 import styles from './Header.module.scss';
 

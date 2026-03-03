@@ -7,16 +7,13 @@
         "apps/*"
     ],
     "scripts": {
-        "simple": "             pnpm --filter @web-boilerplate/1-simple dev",
-        "translations": "       pnpm --filter @web-boilerplate/2-translations dev",
-        "tailwind": "           pnpm --filter @web-boilerplate/3-tailwind dev",
-        "tanstack": "           pnpm --filter @web-boilerplate/4-tanstack dev",
+        "dev": "pnpm --filter @web-boilerplate/internal-job-posting dev",
+        "internal-job-posting": "pnpm --filter @web-boilerplate/internal-job-posting dev",
         "buildall": "           pnpm -r run build",
         "lint": "               biome check .",
         "lint:fix": "biome check . --write",
         "format": "biome format . --write"
     },
-    "bigalog": "              pnpm --filter @com/bigalog    dev",
     "dependencies": {
         "babel-plugin-react-compiler": "^19.0.0-beta-e552027-20250112",
         "clsx": "^2.1.1",

@@ -7,9 +7,7 @@ const nextConfig = {
         removeConsole: false,
     },
     output: 'standalone',
-    experimental: {
-        reactCompiler: true,
-    },
+    reactCompiler: true,
     env: {
         _APP,
         _BRANCH_NAME,

@@ -1,12 +1,12 @@
 'use client';
 
-import type { ECountrySeo, ELanguage } from '_core/constants/locale';
-import { useTranslationClient } from '_core/i18n/i18nClient';
 import type { TLocaleSEO } from '_core/types/locale';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 import { Trans } from 'react-i18next';
+import { buildSeoLocale, getAlternateLanguage, splitSeoLocale } from '@/helpers';
+import { useTranslationClient } from '@/lib';
 
 import styles from './Footer.module.scss';
 
@@ -19,22 +19,19 @@ const Footer = ({ seoLocale }: TProps) => {
 
     const i18n = useTranslationClient(seoLocale);
 
-    const [currentSeoCountry, currentLang] = useMemo(
-        () => seoLocale.split('-') as [ECountrySeo, ELanguage],
-        [seoLocale],
-    );
+    const [currentSeoCountry, currentLang] = useMemo(() => splitSeoLocale(seoLocale), [seoLocale]);
 
-    const newLang = useMemo(() => (currentLang === 'en' ? 'ar' : 'en'), [currentLang]);
+    const newLang = useMemo(() => getAlternateLanguage(currentLang), [currentLang]);
 
     const handleSwitchLanguage = useCallback(() => {
         i18n.changeLanguage(newLang);
-    }, [newLang]);
+    }, [i18n, newLang]);
 
     const newUrl = useMemo(() => {
-        const newSeoLocale = `${currentSeoCountry}-${newLang}`;
+        const newSeoLocale = buildSeoLocale(currentSeoCountry, newLang);
         const pathnameWithoutSeoLocale = pathname.replace(`/${seoLocale}`, '');
         return `/${newSeoLocale}${pathnameWithoutSeoLocale || '/'}`;
-    }, [currentSeoCountry, newLang]);
+    }, [currentSeoCountry, newLang, pathname, seoLocale]);
 
     const LanguageText = <b className={styles.lang}>{newLang}</b>;
 

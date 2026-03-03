@@ -1,12 +1,11 @@
-import { dir } from 'i18next';
-import type React from 'react';
-
-import '_core/styles/theme.scss';
 import type { ELanguage } from '_core/constants/locale';
 import type { TSeoLocaleParams } from '_core/types/locale';
+import { dir } from 'i18next';
+import type React from 'react';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import Main from '@/components/Main';
+import '@/styles/global.scss';
 
 type TProps = {
     params: Promise<{ seoLocale: string }>;

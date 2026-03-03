@@ -12,5 +12,5 @@
             "@/*": ["./*"]
         }
     },
-    "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "../../_core/types/career-board.ts", "../../_core/types/portal.ts"]
+    "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"]
 }

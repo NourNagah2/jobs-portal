@@ -1,0 +1,11 @@
+{
+    "name": "@web-boilerplate/internal-job-posting",
+    "private": true,
+    "version": "4.0.0",
+    "scripts": {
+        "dev": "   _APP=internal-job-posting next dev",
+        "lint": "                               biome check app assets components helpers lib mocks styles utils",
+        "build": " _APP=internal-job-posting    next build",
+        "start": "                              next start"
+    }
+}
