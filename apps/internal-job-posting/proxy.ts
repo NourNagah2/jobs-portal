@@ -14,7 +14,6 @@ export const config = {
 };
 
 export const proxy = (request: TNextRequest): TNextResponse => {
-    const host = request.headers.get('host');
     const { pathname, search } = request.nextUrl;
 
     const isPathnameMissingLocale = !coreConfig.locales.some(
@@ -39,7 +38,8 @@ export const proxy = (request: TNextRequest): TNextResponse => {
 
     // Let's redirect if there is no locale or app
     if (isPathnameMissingLocale) {
-        newUrl = `https://${host}/${newSeoLocale}/${pathname}`;
+        const normalizedPathname = pathname === '/' ? '' : pathname;
+        newUrl = `${request.nextUrl.origin}/${newSeoLocale}${normalizedPathname}`;
         if (search) {
             newUrl = `${newUrl}${search}`;
         }
