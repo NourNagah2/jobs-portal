@@ -1,88 +1,115 @@
-export type TJobPostStatus = 'accepted' | 'applied' | 'closed' | 'rejected' | 'review';
-
 export type TJobPost = {
     id: string;
-    title: string;
-    company: string;
-    location: string;
-    employmentType: string;
-    experienceLevel: string;
-    postedAt: string;
-    salaryRange: string;
-    status: TJobPostStatus;
-    description: string;
-    tags: string[];
+    companyKey: string;
+    roleKey: string;
+    titleKey: string;
+    descriptionKey: string;
+    postedAtKey: string;
+    yearsOfExperience: number;
+    applicantsCount: number;
+    actionLabelKey: string;
+    actionVariant: 'outline' | 'primary';
+    companyTone: 'blue' | 'green' | 'orange' | 'pink' | 'purple' | 'yellow';
+    listingState: 'closed' | 'draft' | 'open';
 };
 
 export const mockJobPosts: TJobPost[] = [
     {
-        id: 'job-frontend-platform',
-        title: 'Senior Frontend Engineer',
-        company: 'Internal Platform Team',
-        location: 'Dubai, UAE',
-        employmentType: 'Full-time',
-        experienceLevel: '5+ years',
-        postedAt: '2 days ago',
-        salaryRange: 'AED 28k - AED 35k',
-        status: 'review',
-        description:
-            'Build and maintain shared internal UI foundations, design system primitives, and dashboard experiences used across squads.',
-        tags: ['React', 'TypeScript', 'Design Systems'],
+        id: 'job-senior-backend-engineer',
+        companyKey: 'jobBoard.cards.seniorBackendEngineer.company',
+        roleKey: 'jobBoard.roles.engineering',
+        titleKey: 'jobBoard.cards.seniorBackendEngineer.title',
+        descriptionKey: 'jobBoard.cards.seniorBackendEngineer.description',
+        postedAtKey: 'jobBoard.cards.seniorBackendEngineer.postedAt',
+        yearsOfExperience: 5,
+        applicantsCount: 2,
+        actionLabelKey: 'jobBoard.buttons.viewCandidates',
+        actionVariant: 'outline',
+        companyTone: 'blue',
+        listingState: 'open',
     },
     {
-        id: 'job-product-analytics',
-        title: 'Product Analyst',
-        company: 'People Experience',
-        location: 'Riyadh, KSA',
-        employmentType: 'Hybrid',
-        experienceLevel: '3+ years',
-        postedAt: '4 days ago',
-        salaryRange: 'SAR 18k - SAR 24k',
-        status: 'applied',
-        description:
-            'Partner with product and HR stakeholders to define key metrics, monitor funnels, and surface actionable hiring insights.',
-        tags: ['SQL', 'Experimentation', 'Dashboards'],
+        id: 'job-product-manager-food',
+        companyKey: 'jobBoard.cards.productManagerFood.company',
+        roleKey: 'jobBoard.roles.product',
+        titleKey: 'jobBoard.cards.productManagerFood.title',
+        descriptionKey: 'jobBoard.cards.productManagerFood.description',
+        postedAtKey: 'jobBoard.cards.productManagerFood.postedAt',
+        yearsOfExperience: 4,
+        applicantsCount: 0,
+        actionLabelKey: 'jobBoard.buttons.applyNow',
+        actionVariant: 'primary',
+        companyTone: 'orange',
+        listingState: 'open',
     },
     {
-        id: 'job-talent-partner',
-        title: 'Talent Acquisition Partner',
-        company: 'Talent Team',
-        location: 'Cairo, Egypt',
-        employmentType: 'On-site',
-        experienceLevel: '4+ years',
-        postedAt: '1 week ago',
-        salaryRange: 'EGP 65k - EGP 85k',
-        status: 'accepted',
-        description:
-            'Drive end-to-end recruiting for technical roles and improve candidate experience across sourcing, screening, and onboarding.',
-        tags: ['Recruitment', 'Employer Branding', 'Hiring Ops'],
+        id: 'job-frontend-engineer',
+        companyKey: 'jobBoard.cards.frontendEngineer.company',
+        roleKey: 'jobBoard.roles.engineering',
+        titleKey: 'jobBoard.cards.frontendEngineer.title',
+        descriptionKey: 'jobBoard.cards.frontendEngineer.description',
+        postedAtKey: 'jobBoard.cards.frontendEngineer.postedAt',
+        yearsOfExperience: 3,
+        applicantsCount: 1,
+        actionLabelKey: 'jobBoard.buttons.viewCandidates',
+        actionVariant: 'outline',
+        companyTone: 'pink',
+        listingState: 'open',
     },
     {
-        id: 'job-ops-manager',
-        title: 'Operations Program Manager',
-        company: 'Operations Excellence',
-        location: 'Amman, Jordan',
-        employmentType: 'Full-time',
-        experienceLevel: '6+ years',
-        postedAt: '10 days ago',
-        salaryRange: 'USD 4.5k - USD 6k',
-        status: 'closed',
-        description:
-            'Lead cross-functional operational programs, align stakeholders, and standardize execution playbooks for internal mobility.',
-        tags: ['Program Management', 'Process Design', 'Stakeholder Management'],
+        id: 'job-data-scientist',
+        companyKey: 'jobBoard.cards.dataScientist.company',
+        roleKey: 'jobBoard.roles.data',
+        titleKey: 'jobBoard.cards.dataScientist.title',
+        descriptionKey: 'jobBoard.cards.dataScientist.description',
+        postedAtKey: 'jobBoard.cards.dataScientist.postedAt',
+        yearsOfExperience: 3,
+        applicantsCount: 1,
+        actionLabelKey: 'jobBoard.buttons.viewCandidates',
+        actionVariant: 'outline',
+        companyTone: 'purple',
+        listingState: 'open',
     },
     {
-        id: 'job-ui-designer',
-        title: 'Product Designer',
-        company: 'Employee Experience',
-        location: 'Remote',
-        employmentType: 'Contract',
-        experienceLevel: '3+ years',
-        postedAt: '3 days ago',
-        salaryRange: 'USD 3k - USD 4k',
-        status: 'rejected',
-        description:
-            'Design end-to-end internal portal journeys, including role discovery, profile growth, and manager review workflows.',
-        tags: ['Figma', 'UX Research', 'Prototyping'],
+        id: 'job-logistics-operations-manager',
+        companyKey: 'jobBoard.cards.logisticsOperationsManager.company',
+        roleKey: 'jobBoard.roles.operations',
+        titleKey: 'jobBoard.cards.logisticsOperationsManager.title',
+        descriptionKey: 'jobBoard.cards.logisticsOperationsManager.description',
+        postedAtKey: 'jobBoard.cards.logisticsOperationsManager.postedAt',
+        yearsOfExperience: 6,
+        applicantsCount: 0,
+        actionLabelKey: 'jobBoard.buttons.viewCandidates',
+        actionVariant: 'outline',
+        companyTone: 'green',
+        listingState: 'open',
+    },
+    {
+        id: 'job-ux-designer',
+        companyKey: 'jobBoard.cards.uxDesigner.company',
+        roleKey: 'jobBoard.roles.design',
+        titleKey: 'jobBoard.cards.uxDesigner.title',
+        descriptionKey: 'jobBoard.cards.uxDesigner.description',
+        postedAtKey: 'jobBoard.cards.uxDesigner.postedAt',
+        yearsOfExperience: 4,
+        applicantsCount: 0,
+        actionLabelKey: 'jobBoard.buttons.viewCandidates',
+        actionVariant: 'outline',
+        companyTone: 'yellow',
+        listingState: 'open',
+    },
+    {
+        id: 'job-mobile-engineer-ios',
+        companyKey: 'jobBoard.cards.mobileEngineerIos.company',
+        roleKey: 'jobBoard.roles.engineering',
+        titleKey: 'jobBoard.cards.mobileEngineerIos.title',
+        descriptionKey: 'jobBoard.cards.mobileEngineerIos.description',
+        postedAtKey: 'jobBoard.cards.mobileEngineerIos.postedAt',
+        yearsOfExperience: 4,
+        applicantsCount: 3,
+        actionLabelKey: 'jobBoard.buttons.viewCandidates',
+        actionVariant: 'outline',
+        companyTone: 'blue',
+        listingState: 'draft',
     },
 ];

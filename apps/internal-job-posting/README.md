@@ -29,7 +29,7 @@ apps/internal-job-posting
 - Use them like:
 
 ```tsx
-import { Checkbox } from '@/assets';
+import { Plus } from '@/assets';
 
-<Checkbox width={18} height={18} checked />
+<Plus width={16} height={16} />
 ```

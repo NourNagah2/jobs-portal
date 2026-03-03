@@ -2,9 +2,6 @@ import type { ELanguage } from '_core/constants/locale';
 import type { TSeoLocaleParams } from '_core/types/locale';
 import { dir } from 'i18next';
 import type React from 'react';
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import Main from '@/components/Main';
 import '_core/styles/global.scss';
 
 type TProps = {
@@ -23,11 +20,7 @@ const RootLayout = async (props: TProps) => {
 
     return (
         <html lang={lang} dir={dir(lang)}>
-            <body>
-                <Header seoLocale={seoLocale} />
-                <Main>{children}</Main>
-                <Footer seoLocale={seoLocale} />
-            </body>
+            <body>{children}</body>
         </html>
     );
 };

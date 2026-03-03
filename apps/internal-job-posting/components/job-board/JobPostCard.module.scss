@@ -1,38 +1,23 @@
 @use '_core/styles/mixins' as *;
 
 .card {
-    @include card;
     @include flex-column;
 
-    position: relative;
-    overflow: hidden;
-    min-height: 300px;
-    gap: var(--space-4);
-    border: 1px solid transparent;
+    gap: var(--space-3);
+    min-height: 244px;
+    border: 1px solid #d9dde5;
+    border-radius: 12px;
+    background: var(--color-surface);
+    padding: var(--space-4);
     transition:
-        transform 0.28s ease,
-        box-shadow 0.28s ease,
-        border-color 0.28s ease;
-
-    &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        background: linear-gradient(180deg, rgb(250 204 21 / 10%) 0%, rgb(250 204 21 / 0%) 40%);
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.28s ease;
-    }
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
 
     &:hover {
-        transform: translateY(-6px);
-        border-color: var(--color-border);
-        box-shadow: var(--shadow-card-hover);
-
-        &::after {
-            opacity: 1;
-        }
+        transform: translateY(-2px);
+        border-color: #cfd4de;
+        box-shadow: 0 4px 18px rgb(23 30 52 / 8%);
     }
 }
 
@@ -40,128 +25,157 @@
     @include flex-between;
 
     gap: var(--space-3);
+    align-items: flex-start;
 }
 
-.company {
-    color: var(--color-text-secondary);
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-medium);
+.badges {
+    @include flex-center-v;
+
+    gap: 6px;
+    flex-wrap: wrap;
 }
 
-.status {
-    padding: 6px var(--space-3);
+.companyBadge,
+.roleBadge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 0 10px;
     border-radius: 999px;
-    font-size: var(--font-size-xs);
+    font-size: 12px;
     font-weight: var(--font-weight-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    line-height: 1;
 }
 
-.statusApplied {
-    color: var(--status-applied);
-    background: rgb(59 130 246 / 14%);
+.companyBadge {
+    border: 1px solid transparent;
 }
 
-.statusReview {
-    color: var(--status-review);
-    background: rgb(245 158 11 / 16%);
+.roleBadge {
+    background-color: #f0f1f5;
+    border: 1px solid #eceef3;
+    color: #9ba3b2;
 }
 
-.statusAccepted {
-    color: var(--status-accepted);
-    background: rgb(22 163 74 / 14%);
+.toneBlue {
+    color: #4c70d9;
+    background-color: #eaf1ff;
+    border-color: #c7d7ff;
 }
 
-.statusRejected {
-    color: var(--status-rejected);
-    background: rgb(239 68 68 / 14%);
+.toneOrange {
+    color: #ec7d1c;
+    background-color: #fff2e5;
+    border-color: #ffd7af;
 }
 
-.statusClosed {
-    color: var(--status-closed);
-    background: rgb(107 114 128 / 14%);
+.tonePink {
+    color: #e5609e;
+    background-color: #ffe9f3;
+    border-color: #ffc7df;
+}
+
+.tonePurple {
+    color: #8554db;
+    background-color: #f3ecff;
+    border-color: #dfcbff;
+}
+
+.toneGreen {
+    color: #29a56c;
+    background-color: #e6f9f0;
+    border-color: #baeacf;
+}
+
+.toneYellow {
+    color: #c2881e;
+    background-color: #fff8df;
+    border-color: #f6e6a6;
+}
+
+.moreButton {
+    @include flex-center;
+
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    color: #9197a5;
+
+    &:hover {
+        background-color: #f3f4f8;
+    }
 }
 
 .title {
-    font-size: var(--font-size-lg);
+    font-size: 18px;
     font-weight: var(--font-weight-bold);
-    color: var(--color-text-primary);
-    line-height: 1.3;
+    line-height: 1.32;
+    color: #2b2f39;
 }
 
 .metaList {
-    display: flex;
-    flex-wrap: wrap;
+    @include flex-center-v;
+
+    flex-wrap: nowrap;
     gap: var(--space-3);
 }
 
 .metaItem {
     @include flex-center-v;
 
-    gap: 6px;
-    color: var(--color-text-muted);
-    font-size: var(--font-size-sm);
+    gap: 7px;
+    color: #7f8797;
+    font-size: 15px;
+    white-space: nowrap;
 
     svg {
-        color: var(--color-text-secondary);
+        color: #8e95a6;
         flex-shrink: 0;
     }
 }
 
 .description {
-    color: var(--color-text-secondary);
-    font-size: var(--font-size-sm);
-    line-height: 1.6;
+    color: #7f8797;
+    font-size: 16px;
+    line-height: 1.45;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.tagList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-}
-
-.tag {
-    padding: var(--space-1) var(--space-2);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    font-size: var(--font-size-xs);
-    color: var(--color-text-secondary);
-    background: var(--color-surface);
+.divider {
+    border-top: 1px solid #e1e4eb;
+    margin-top: var(--space-1);
 }
 
 .cardFooter {
-    @include flex-between;
+    display: flex;
+    justify-content: flex-end;
 
     margin-top: auto;
-    gap: var(--space-3);
-}
-
-.metaStack {
-    @include flex-column;
-
-    gap: 2px;
-    color: var(--color-text-muted);
-    font-size: var(--font-size-xs);
-
-    strong {
-        color: var(--color-text-primary);
-        font-size: var(--font-size-sm);
-        font-weight: var(--font-weight-semibold);
-    }
 }
 
 @include screen-max-tablet {
     .card {
         min-height: 0;
+        padding: var(--space-3);
     }
 
-    .cardFooter {
-        @include flex-column;
+    .title {
+        font-size: 17px;
+    }
 
-        align-items: stretch;
+    .metaList {
+        flex-wrap: wrap;
+        gap: var(--space-2);
+    }
+
+    .metaItem {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 15px;
     }
 }

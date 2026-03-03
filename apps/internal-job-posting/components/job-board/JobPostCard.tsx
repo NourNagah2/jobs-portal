@@ -1,74 +1,88 @@
-import { ArrowUpRight, Briefcase, Clock, LocationPin } from '@/assets';
+import { Briefcase, Clock, MoreVertical, Users } from '@/assets';
 import Button from '@/components/ui/Button';
-import type { TJobPost, TJobPostStatus } from '@/mocks';
+import type { TJobPost } from '@/mocks';
 import { cn } from '@/utils';
 
 import styles from './JobPostCard.module.scss';
 
 type TProps = {
     job: TJobPost;
+    company: string;
+    role: string;
+    title: string;
+    description: string;
+    postedAt: string;
+    experienceLabel: string;
+    applicantsLabel: string;
+    actionLabel: string;
+    moreActionsLabel: string;
 };
 
-const statusLabelMap: Record<TJobPostStatus, string> = {
-    applied: 'Applied',
-    review: 'In review',
-    accepted: 'Accepted',
-    rejected: 'Rejected',
-    closed: 'Closed',
+const companyToneClassMap: Record<TJobPost['companyTone'], string> = {
+    blue: styles.toneBlue,
+    orange: styles.toneOrange,
+    pink: styles.tonePink,
+    purple: styles.tonePurple,
+    green: styles.toneGreen,
+    yellow: styles.toneYellow,
 };
 
-const statusClassMap: Record<TJobPostStatus, string> = {
-    applied: styles.statusApplied,
-    review: styles.statusReview,
-    accepted: styles.statusAccepted,
-    rejected: styles.statusRejected,
-    closed: styles.statusClosed,
-};
+const JobPostCard = ({
+    job,
+    company,
+    role,
+    title,
+    description,
+    postedAt,
+    experienceLabel,
+    applicantsLabel,
+    actionLabel,
+    moreActionsLabel,
+}: TProps) => {
+    const buttonVariant = job.actionVariant === 'primary' ? 'primary' : 'outline';
 
-const JobPostCard = ({ job }: TProps) => {
     return (
         <article className={styles.card}>
             <div className={styles.cardHeader}>
-                <span className={styles.company}>{job.company}</span>
-                <span className={cn(styles.status, statusClassMap[job.status])}>{statusLabelMap[job.status]}</span>
+                <div className={styles.badges}>
+                    <span className={cn(styles.companyBadge, companyToneClassMap[job.companyTone])}>{company}</span>
+                    <span className={styles.roleBadge}>{role}</span>
+                </div>
+                <button className={styles.moreButton} type="button" aria-label={moreActionsLabel}>
+                    <MoreVertical width={16} height={16} aria-hidden />
+                </button>
             </div>
 
-            <h3 className={styles.title}>{job.title}</h3>
+            <h3 className={styles.title}>{title}</h3>
 
             <div className={styles.metaList}>
                 <span className={styles.metaItem}>
-                    <LocationPin width={16} height={16} aria-hidden />
-                    {job.location}
-                </span>
-                <span className={styles.metaItem}>
                     <Briefcase width={16} height={16} aria-hidden />
-                    {job.employmentType}
+                    {experienceLabel}
                 </span>
                 <span className={styles.metaItem}>
                     <Clock width={16} height={16} aria-hidden />
-                    {job.experienceLevel}
+                    {postedAt}
+                </span>
+                <span className={styles.metaItem}>
+                    <Users width={16} height={16} aria-hidden />
+                    {applicantsLabel}
                 </span>
             </div>
 
-            <p className={styles.description}>{job.description}</p>
+            <p className={styles.description}>{description}</p>
 
-            <ul className={styles.tagList}>
-                {job.tags.map((tag) => (
-                    <li key={`${job.id}-${tag}`} className={styles.tag}>
-                        {tag}
-                    </li>
-                ))}
-            </ul>
+            <div className={styles.divider} />
 
             <div className={styles.cardFooter}>
-                <div className={styles.metaStack}>
-                    <span>Posted {job.postedAt}</span>
-                    <strong>{job.salaryRange}</strong>
-                </div>
                 {/* TODO: Link this CTA to real job details and application flow. */}
-                <Button type="button" size="sm" variant="secondary">
-                    View details
-                    <ArrowUpRight width={14} height={14} aria-hidden />
+                <Button
+                    type="button"
+                    size="sm"
+                    variant={buttonVariant}
+                    leftIcon={buttonVariant === 'outline' ? <Users width={15} height={15} aria-hidden /> : undefined}
+                >
+                    {actionLabel}
                 </Button>
             </div>
         </article>

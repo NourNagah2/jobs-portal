@@ -1,2 +1,2 @@
-export type { TJobPost, TJobPostStatus } from './jobPostings';
+export type { TJobPost } from './jobPostings';
 export { mockJobPosts } from './jobPostings';

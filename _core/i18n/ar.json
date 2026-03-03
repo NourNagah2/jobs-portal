@@ -7,5 +7,71 @@
     "_switcher-content_few": "لقد ضغطت {{count}} مرات",
     "_switcher-content_many": "لقد ضغطت {{count}} مرات",
     "_switcher-content_others": "لقد ضغطت {{count}} مرات",
-    "click-me": "اضغط هنا"
+    "click-me": "اضغط هنا",
+    "jobBoard": {
+        "openPositions": "الوظائف المفتوحة",
+        "postedCount": "{{count}} منشورة",
+        "closedCount": "{{count}} مغلقة",
+        "searchPlaceholder": "ابحث عن وظائف، فرق، أدوار...",
+        "experienceYears": "{{count}}+ سنوات",
+        "applicantSingle": "{{count}} متقدم",
+        "applicantPlural": "{{count}} متقدمين",
+        "moreActions": "المزيد من الإجراءات",
+        "buttons": {
+            "postJob": "أضف وظيفة",
+            "viewCandidates": "عرض المتقدمين",
+            "applyNow": "قدّم الآن"
+        },
+        "roles": {
+            "engineering": "الهندسة",
+            "product": "المنتج",
+            "data": "البيانات",
+            "operations": "العمليات",
+            "design": "التصميم"
+        },
+        "cards": {
+            "seniorBackendEngineer": {
+                "company": "نون كور",
+                "title": "مهندس باك إند أول",
+                "description": "انضم إلى فريق المنصة الأساسية لبناء العمود الفقري لسوق نون. ستعمل على أنظمة موزعة عالية الأداء تخدم ملايين العملاء في الخليج.",
+                "postedAt": "منذ 19 يوم"
+            },
+            "productManagerFood": {
+                "company": "نون فود",
+                "title": "مدير منتج - فود",
+                "description": "قد منتج نون فود الموجه للمستخدم. حدّد خارطة الطريق واعمل مع فرق الهندسة والتصميم لتحقيق مؤشرات الأداء الأساسية.",
+                "postedAt": "منذ 21 يوم"
+            },
+            "frontendEngineer": {
+                "company": "نمشي",
+                "title": "مهندس واجهات أمامية",
+                "description": "ابنِ تجارب تسوق عالمية لقطاع نمشي. ستعمل على واجهات React تخدم ملايين المستخدمين المهتمين بالموضة.",
+                "postedAt": "منذ 23 يوم"
+            },
+            "dataScientist": {
+                "company": "إيفريداي لابز",
+                "title": "عالم بيانات",
+                "description": "ابنِ نماذج تعلم آلي تدعم محرك التخصيص في نون. انضم إلى Everyday Labs للعمل على أنظمة توصية متقدمة.",
+                "postedAt": "منذ 26 يوم"
+            },
+            "logisticsOperationsManager": {
+                "company": "اللوجستيات",
+                "title": "مدير عمليات لوجستية",
+                "description": "قد عمليات التوصيل في السعودية والإمارات وادفع الكفاءة والجودة وتحسين التكلفة عبر شبكة توصيل واسعة.",
+                "postedAt": "01/02/2026"
+            },
+            "uxDesigner": {
+                "company": "سوبرمول",
+                "title": "مصمم تجربة مستخدم",
+                "description": "صمّم تجارب تسوق سلسة لسوبرمول وامتلك رحلة التصميم كاملة من الاكتشاف حتى التسليم.",
+                "postedAt": "28/01/2026"
+            },
+            "mobileEngineerIos": {
+                "company": "نون مينتس",
+                "title": "مهندس تطبيقات جوال (iOS)",
+                "description": "ابنِ أسرع تطبيق توصيل بقالة في المنطقة وامتلك تطوير خصائص iOS عالية الأداء وجودة الإطلاق.",
+                "postedAt": "منذ 17 يوم"
+            }
+        }
+    }
 }

@@ -3,11 +3,12 @@ import { cn } from '@/utils';
 
 import styles from './Button.module.scss';
 
-export type TButtonVariant = 'ghost' | 'primary' | 'secondary';
+export type TButtonVariant = 'outline' | 'primary';
 export type TButtonSize = 'md' | 'sm';
 
 type TProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     children: ReactNode;
+    leftIcon?: ReactNode;
     variant?: TButtonVariant;
     size?: TButtonSize;
     fullWidth?: boolean;
@@ -15,8 +16,7 @@ type TProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const variantClassMap: Record<TButtonVariant, string> = {
     primary: styles.variantPrimary,
-    secondary: styles.variantSecondary,
-    ghost: styles.variantGhost,
+    outline: styles.variantOutline,
 };
 
 const sizeClassMap: Record<TButtonSize, string> = {
@@ -24,7 +24,15 @@ const sizeClassMap: Record<TButtonSize, string> = {
     md: styles.sizeMd,
 };
 
-const Button = ({ children, className, variant = 'primary', size = 'md', fullWidth = false, ...restProps }: TProps) => {
+const Button = ({
+    children,
+    leftIcon,
+    className,
+    variant = 'outline',
+    size = 'md',
+    fullWidth = false,
+    ...restProps
+}: TProps) => {
     return (
         <button
             className={cn(
@@ -36,6 +44,7 @@ const Button = ({ children, className, variant = 'primary', size = 'md', fullWid
             )}
             {...restProps}
         >
+            {leftIcon ? <span className={styles.icon}>{leftIcon}</span> : null}
             {children}
         </button>
     );

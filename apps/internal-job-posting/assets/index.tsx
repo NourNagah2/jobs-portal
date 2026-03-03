@@ -1,12 +1,12 @@
-export type { ArrowUpRightIconProps } from './icons/ArrowUpRight';
-export { default as ArrowUpRight } from './icons/ArrowUpRight';
 export type { BriefcaseIconProps } from './icons/Briefcase';
 export { default as Briefcase } from './icons/Briefcase';
-export type { CheckboxProps } from './icons/Checkbox';
-export { default as Checkbox } from './icons/Checkbox';
 export type { ClockIconProps } from './icons/Clock';
 export { default as Clock } from './icons/Clock';
-export type { LocationPinIconProps } from './icons/LocationPin';
-export { default as LocationPin } from './icons/LocationPin';
+export type { MoreVerticalIconProps } from './icons/MoreVertical';
+export { default as MoreVertical } from './icons/MoreVertical';
+export type { PlusIconProps } from './icons/Plus';
+export { default as Plus } from './icons/Plus';
 export type { SearchIconProps } from './icons/Search';
 export { default as Search } from './icons/Search';
+export type { UsersIconProps } from './icons/Users';
+export { default as Users } from './icons/Users';

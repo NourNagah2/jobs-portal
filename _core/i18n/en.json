@@ -4,5 +4,71 @@
     "_switcher-content_zero": "You have clicked {{count}} times",
     "_switcher-content": "You have clicked {{count}} time",
     "_switcher-content_other": "You have clicked {{count}} times",
-    "click-me": "Click me"
+    "click-me": "Click me",
+    "jobBoard": {
+        "openPositions": "Open Positions",
+        "postedCount": "{{count}} posted",
+        "closedCount": "{{count}} closed",
+        "searchPlaceholder": "Search jobs, squads, roles...",
+        "experienceYears": "{{count}}+ yrs",
+        "applicantSingle": "{{count}} applicant",
+        "applicantPlural": "{{count}} applicants",
+        "moreActions": "More actions",
+        "buttons": {
+            "postJob": "Post a Job",
+            "viewCandidates": "View Candidates",
+            "applyNow": "Apply Now"
+        },
+        "roles": {
+            "engineering": "Engineering",
+            "product": "Product",
+            "data": "Data",
+            "operations": "Operations",
+            "design": "Design"
+        },
+        "cards": {
+            "seniorBackendEngineer": {
+                "company": "Noon Core",
+                "title": "Senior Backend Engineer",
+                "description": "Join the Core Platform team to build the backbone of noon's marketplace. You'll work on high-scale distributed systems serving millions of customers across the GCC.",
+                "postedAt": "19 days ago"
+            },
+            "productManagerFood": {
+                "company": "Noon Food",
+                "title": "Product Manager - Food",
+                "description": "Lead the consumer-facing product for Noon Food. Define the roadmap, work closely with engineering and design, and drive key metrics for our food delivery platform.",
+                "postedAt": "21 days ago"
+            },
+            "frontendEngineer": {
+                "company": "Namshi",
+                "title": "Frontend Engineer",
+                "description": "Build world-class shopping experiences for Namshi, noon's fashion vertical. Work on a React-based storefront serving millions of fashion enthusiasts.",
+                "postedAt": "23 days ago"
+            },
+            "dataScientist": {
+                "company": "Everyday Labs",
+                "title": "Data Scientist",
+                "description": "Build ML models that power noon's personalization engine. Join Everyday Labs - noon's AI and ML innovation hub - to work on cutting-edge recommender systems.",
+                "postedAt": "26 days ago"
+            },
+            "logisticsOperationsManager": {
+                "company": "Logistics",
+                "title": "Logistics Operations Manager",
+                "description": "Lead last-mile delivery operations across KSA and UAE. Drive efficiency, quality, and cost optimization for noon's delivery network of 5,000+ drivers.",
+                "postedAt": "01/02/2026"
+            },
+            "uxDesigner": {
+                "company": "Supermall",
+                "title": "UX Designer",
+                "description": "Design seamless shopping experiences for Supermall, noon's premium marketplace. Own end-to-end design from discovery to delivery.",
+                "postedAt": "28/01/2026"
+            },
+            "mobileEngineerIos": {
+                "company": "Noon Minutes",
+                "title": "Mobile Engineer (iOS)",
+                "description": "Build the fastest grocery delivery app in the region. Own high-performance native iOS features and release quality.",
+                "postedAt": "17 days ago"
+            }
+        }
+    }
 }

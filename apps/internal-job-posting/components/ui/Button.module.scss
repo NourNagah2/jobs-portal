@@ -4,15 +4,17 @@
     @include flex-center-v;
 
     justify-content: center;
-    gap: var(--space-2);
-    border-radius: var(--radius-md);
+    gap: 6px;
+    border-radius: 12px;
+    border: 1px solid transparent;
     font-weight: var(--font-weight-semibold);
     line-height: 1;
     transition:
         transform 0.2s ease,
-        box-shadow 0.2s ease,
         background-color 0.2s ease,
-        border-color 0.2s ease;
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        color 0.2s ease;
 
     &:hover {
         transform: translateY(-1px);
@@ -25,45 +27,47 @@
 }
 
 .sizeSm {
-    min-height: 36px;
-    padding: 0 var(--space-3);
-    font-size: var(--font-size-sm);
+    min-height: 40px;
+    padding: 0 var(--space-4);
+    font-size: 14px;
 }
 
 .sizeMd {
-    min-height: 44px;
+    min-height: 46px;
     padding: 0 var(--space-5);
-    font-size: var(--font-size-base);
+    font-size: 15px;
 }
 
 .variantPrimary {
-    @include button-primary;
-
-    box-shadow: 0 4px 14px rgb(250 204 21 / 24%);
-}
-
-.variantSecondary {
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    color: var(--color-text-secondary);
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #1d1d1f;
 
     &:hover {
-        background-color: var(--color-primary-light);
-        border-color: var(--color-primary);
+        background-color: var(--color-primary-dark);
+        border-color: var(--color-primary-dark);
+        color: var(--color-surface);
     }
 }
 
-.variantGhost {
-    background-color: transparent;
-    border: 1px dashed var(--color-border);
-    color: var(--color-text-muted);
+.variantOutline {
+    background-color: var(--color-surface);
+    border-color: #d7dae1;
+    color: #2f3440;
 
     &:hover {
-        border-style: solid;
-        color: var(--color-text-secondary);
+        border-color: #c9cdd7;
+        background-color: #f8f9fb;
     }
 }
 
 .fullWidth {
     width: 100%;
+}
+
+.icon {
+    @include flex-center;
+
+    width: 16px;
+    height: 16px;
 }
