@@ -1,0 +1,11 @@
+@use '_core/styles/mixins' as *;
+
+.container {
+    @include flex-center-column;
+
+    min-width: 0;
+    gap: var(--space-10);
+    padding: var(--space-8);
+
+    @include font-size(36);
+}
